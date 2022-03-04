@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>jump code</title>
+    <style id="style"></style>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      #demo {
+        word-break: break-word;
+      }
+      #div1 {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+      }
+      #div1::before {
+        position: absolute;
+        content: '';
+      }
+      #div1::after {
+        position: absolute;
+        content: '';
+      }
+
+      @media (max-width: 500px) {
+        body {
+          color: red;
+        }
+        #div1 {
+          position: relative;
+          top: 0;
+          right: 0;
+          height: 100vw;
+          width: 100vw;
+        }
+        #div1::before {
+          width: 50vw;
+          height: 50vw;
+        }
+        #div1::after {
+          width: 50vw;
+          height: 50vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <div id="div1"></div>
+  </body>
+  <script src="main.js"></script>
+</html>
